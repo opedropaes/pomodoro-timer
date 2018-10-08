@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript">
         
-        var timein = prompt("Quantos minutos quer se manter focado?", "25");
+        var timein = prompt("Quantos minutos quer se manter focado ou relaxar?", "25");
         var minutes = parseInt(timein, 10);
         var seconds =  1;
         
@@ -29,18 +29,15 @@
 				    seconds = "0" + seconds;				
 			     }				
 			     time.innerHTML = minutes + ":" + seconds;				
-			     setTimeout('countdown()', 1000);			
+			     setTimeout('countdown()', 10);			
 		      }			
-		      else{	
+		      else{
+                 minutes = 5;
                  return document.getElementById("playAudio").play();
                  time.innerHTML = "00:00";
-		      }		
+		      }
+            
 	   }
-        
-        function darPlay() {
-            var playAudio = document.getElementById("playAudio").play();
-        }
-        
         
     </script>
 
@@ -49,12 +46,15 @@
      <div id="upperbar">
         <p><img src="images/tomato.png">Pomodoro Timer</p>
     </div>
+    <div id="text">
+        <p>Após seu tempo acabar, aperte o botão novamente<br>para iniciar seu tempo de descanso</p>
+    </div>
     <div id="time">
         <p>00:00</p>
     </div>
     <div>
     <audio id="playAudio" src="sounds/beep.mp3"></audio>
     </div>
-    <center><button id="startbutton" onclick="countdown();">Play</button></center>
+    <center><button id="startbutton" onclick="countdown();">START</button></center>
 </body>
 </html>
