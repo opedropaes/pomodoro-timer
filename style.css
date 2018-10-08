@@ -45,7 +45,7 @@ body {
     font-size: 100px;
     font-family: sans-serif;
     padding: 100px;
-    line-height: 160px;
+/*    line-height: 160px;*/
     text-align: center;
     color: #dadada;
     
@@ -61,7 +61,6 @@ body {
     
     width: 180px;
     height: 50px;
-    margin-top: -40px;
     
 }
 
