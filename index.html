@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	Pomodoro Timer	
+	</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        
+        //var time = document.getElementById("time");
+        var minutes = 1;
+        var seconds =  1;
+        
+        
+        function countdown(){			
+		  
+            if((minutes > 0) || (seconds > 0)){				
+                if(seconds == 0){					
+				    seconds = 59;					
+				    minutes = minutes - 1;	
+			     }				
+			     else{					 
+				    seconds = seconds - 1;				
+			     }				
+			     if(minutes.toString().length == 1){					
+				    minutes = "0" + minutes;				
+			     }				
+			     if(seconds.toString().length == 1){					
+				    seconds = "0" + seconds;				
+			     }				
+			     time.innerHTML = minutes + ":" + seconds;				
+			     setTimeout('countdown()', 1000);			
+		      }			
+		      else{	
+                 return document.getElementById("playAudio").play();
+                 time.innerHTML = "00:00";
+		      }		
+	   }
+        
+        function darPlay() {
+            var playAudio = document.getElementById("playAudio").play();
+        }
+        
+        
+    </script>
+
+</head>
+<body>
+     <div id="upperbar">
+        <p><img src="images/tomato.png">Pomodoro Timer</p>
+    </div>
+    <div id="time">
+        <p>00:00</p>
+    </div>
+    <div>
+    <audio id="playAudio" src="sounds/beep.mp3"></audio>
+    </div>
+    <center><button id="startbutton" onclick="countdown();">Play</button></center>
+</body>
+</html>
